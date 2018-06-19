@@ -1,0 +1,115 @@
+<?php
+session_start();
+include_once 'dbconnect.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Conestoga Employment Guide</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Myriad_Pro_300.font.js"></script>
+<script type="text/javascript" src="js/Myriad_Pro_400.font.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body id="page1">
+<div class="wrap">
+  <header>
+    <div class="container">
+   <h1><a href="http://www.conestogac.on.ca" target="_blank"></a></h1> 
+      <nav><ul>
+          <li class="current"><a href="index.php" class="m1">Home </a></li>
+         <li><a href="about-us.php" class="m2">About GCM2000</a></li>
+		  <?php if (isset($_SESSION['usr_id'])) { ?>
+				<li><a href="#" class="m5">Signed in as <?php echo $_SESSION['usr_name']; ?></a></li>
+				<li><a href="logout.php">Log Out</a></li>
+				<?php } else { ?>
+				<li><a href="signregister.php" class="m5">Sign In/Register</a></li>
+				<?php } ?>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp&nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+		   <a href="http://www.conestogac.on.ca" class="m3"><img src="images/321.png"></a>
+        </ul></nav></div>
+  </header>
+  <div class="container">
+    <aside>
+      <h3>Categories</h3>
+      <ul class="categories">
+       <li><span><a href="article.php">Articles</a></span></li>
+	   <li class="last"><span><a href="discussion.php">Discussion Forums</a></span></li>
+	   </ul>
+	   <h3>Library Resource Centre</h3>
+	    <ul class="categories">
+        <li><span><a href="http://www.conestogac.on.ca/lrc/" target="_blank">LRC Link</a></span></li>
+        <li><span><a href="http://lib.conestogac.on.ca/research-help" target="_blank">LRC Help</a></span></li>
+		<li class="last"><span><a href="http://lib.conestogac.on.ca/az.php" target="_blank">LRC Database</a></span></li>
+      </ul>
+	  <h3>Other Resources</h3>
+	  <ul class="categories">
+        <li><span><a href="http://noc.esdc.gc.ca/English/home.aspx" target="_blank">NOC LIST</a></span></li>
+		<li><span><a href="https://www.meetup.com/find/tech/" target="_blank">Meetup</a></span></li>
+	  </ul>
+      <form action="email.php" id="newsletter-form" method="post">
+        <fieldset>
+          <div class="rowElem">
+            <h2>Stay in Touch!</h2>
+            <input type="email" placeholder="Enter Your Email Here" name="email">
+            <div class="clear"><button class="fright" type="submit" name="submit">Submit</a></div>
+          </div>
+        </fieldset>
+      </form>
+  <h2>Twitter <span> Live</span></h2><br>
+      <ul class="news">
+        <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/CCGCM2000">Tweets by CCGCM2000</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </ul>
+    </aside>
+    <section id="content">
+      <div id="banner">
+ <a href="index.php"><h2><span>Conestoga</span><span>Student</span><span>Employment</span><span>Guide</span></h2></a>
+      </div>
+      <div class="inside">
+
+		<h2>Self Assessment</h2>
+		<h5>Importance of Self-Awareness</h5>
+		<p>Understanding your personality, and your most significant skills and abilities helps you in a variety of areas: self-improvement, teamwork, and the job hunt—just to name a few. Taking the time to increase your self-awareness is definitely worth the effort.</p>
+		<h5>Benefits of Self-Awareness</h5>
+		<p>Job seekers must be able to articulate their skills and abilities, temperament and preferred work style, passions and values, motivations and goals, and accomplishments and knowledge base in order to interview successfully and land not just any job, but the right job.</p>
+		<h5>Building Self-Awareness through Self-Reflection</h5>
+		<p>Making plans for your future can be difficult. Starting with the self-assessment process can give you more choices and increase your confidence that you are on the right career path. A self-assessment can reveal your personal attributes, values, skills, and interests, all of which are critical in helping you make informed career choices that are appropriate for you. Self-reflection is a good starting part for getting to know yourself better.</p>
+		<h5>Setting Career Goals</h5>
+		<p>There is no assessment tool that will define your motives or goals. That requires self-reflection and soul searching. Many of us spend more time planning our vacations than we do planning our careers. We are not particularly clear about what is most important to us, and we arrive at decisions without any real thought process.</p>
+		<h5>SMART Goals</h5>
+		<p>The right goals outweigh any excuses you have to achieve them. Your goals must be measurable and should have both long- and short-term components that are time, task, and resource specific. You will be amazed at what you can accomplish when you are clear about what you want and have an action plan in place to guide you.</p>
+		<div class="grow">
+		<h2>S<h6>pecific</h6></h2> 
+		</div>
+		<div class="grow">
+		<h2>M<h6>easurable & Meaningful to You</h6></h2>
+		</div>
+		<div class="grow">
+		<h2>A<h6>ction-Oriented and Achievable</h6></h2> 
+		</div>
+		<div class="grow">
+		<h2>R<h6>ealistic and Responsible</h6></h2>
+		</div>
+		<div class="grow">
+		<h2>T<h6>imed Toward What You Want</h6></h2> 
+		</div><br>
+	  </div>
+    </section>
+	<br><a href="article.php"><h2>BACK</h2></a>
+  </div>
+</div>
+<footer>
+  <div class="footerlink">
+    <p class="rf">Copyright &copy; 2017 <a href="index.php">Conestoga Student Employment Guide (GCM2000)</a> - All Rights Reserved</p>
+    <div style="clear:both;"></div>
+  </div>
+</footer>
+<script type="text/javascript"> Cufon.now(); </script>
+</body>
+</html>
